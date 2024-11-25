@@ -57,7 +57,7 @@
 				<section class="ftco-section ftco-no-pt ftco-no-pb">
 					<div class="container px-md-0">
 						<div class="row d-flex no-gutters">
-							<div class="col-md-3 pricing" data-index="1" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="1" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/nails-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -77,7 +77,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing" data-index="2" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="2" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/foot-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -99,7 +99,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing" data-index="3" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="3" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/face-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -120,7 +120,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing" data-index="4" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="4" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/hair-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -154,7 +154,6 @@
 		<script src="js/popper.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="js/google-map.js"></script>
-
 		-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -168,61 +167,6 @@
 		<script src="js/scrollax.min.js"></script>
 		<script src="js/main.js"></script>
 
-		<script language="javascript">
-			const images = document.querySelectorAll(".pricing .img");
-
-			function panImages() {
-				let mainBox = document.documentElement.getBoundingClientRect(),
-				  	boxWidth = mainBox.width;
-
-				let {clientX: x, clientY: y} = event;
-				images.forEach(function(image) {
-					let percentX = (x / 2 / boxWidth * 100) + 25;
-
-					let panImageAnimation = [
-						{
-							backgroundPosition: `${percentX}% 0`
-						}
-					]
-					image.animate(panImageAnimation, {duration: 1500, fill: 'forwards', easing: 'cubic-bezier(.6,-0.02,.49,1.26)'})
-				})
-			}
-
-			function hasTouchSupport() {
-				return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-			}
-			console.log(!hasTouchSupport());
-
-			if (!hasTouchSupport()) {
-				const descriptions = document.querySelectorAll(`.container ul li`);
-				descriptions.forEach(description => {
-					description.style.opacity = '0';
-				});
-			}
-
-			function focusImage(image) {
-				const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
-					button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
-
-				if (hasTouchSupport()) return; 
-				description.style.opacity = '1';
-				description.style.lineHeight = '1.5rem';
-				button.style.color = 'var(--color3)';
-				button.style.borderColor = 'var(--color3)';
-				button.style.backgroundColor = 'gold';
-			}
-
-			function unFocusImage(image) {
-				const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
-					button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
-
-				if (hasTouchSupport()) return; 
-				description.style.opacity = '0';
-				description.style.lineHeight = '2.5rem';
-				button.style.color = 'gold';
-				button.style.borderColor = 'gold';
-				button.style.backgroundColor = 'transparent';
-			}
-		</script>
+		<script src="js/alt-script.js"></script>
 	</body>
 	</html>
