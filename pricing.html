@@ -169,6 +169,7 @@
 			const images = document.querySelectorAll(".pricing .img");
 
 			function panImages() {
+				if (hasTouchSupport()) return;
 				let mainBox = document.documentElement.getBoundingClientRect(),
 				  	boxWidth = mainBox.width;
 
@@ -190,30 +191,21 @@
 			}
 			console.log(!hasTouchSupport());
 
-			if (!hasTouchSupport()) {
-				const descriptions = document.querySelectorAll(`.container ul li`);
-				descriptions.forEach(description => {
-					description.style.opacity = '0';
-				});
-			}
-
 			function focusImage(image) {
+					if (hasTouchSupport()) return; 
 					const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
 						button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
 
-					if (hasTouchSupport()) return; 
-					description.style.opacity = '1';
 					button.style.color = 'var(--color3)';
 					button.style.borderColor = 'var(--color3)';
 					button.style.backgroundColor = 'gold';
 			}
 
 			function unFocusImage(image) {
+				if (hasTouchSupport()) return; 
 				const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
 					button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
 
-				if (hasTouchSupport()) return; 
-				description.style.opacity = '0';
 				button.style.color = 'gold';
 				button.style.borderColor = 'gold';
 				button.style.backgroundColor = 'transparent';

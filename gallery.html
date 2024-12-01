@@ -23,7 +23,7 @@
 </head>
 <body>
 
-	<div id="colorlib-page" onmousemove="panImages();">
+	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
@@ -267,26 +267,5 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="js/google-map.js"></script>
 		<script src="js/main.js"></script>
-		
-		<script language="javascript">
-			const images = document.querySelectorAll(".container .img");
-
-			function panImages() {
-				let mainBox = document.documentElement.getBoundingClientRect(),
-				  	boxWidth = mainBox.width;
-
-				let {clientX: x, clientY: y} = event;
-				images.forEach(function(image) {
-					let percentX = (x / 1.5 / boxWidth * 100) + 12.5;
-
-					let panImageAnimation = [
-						{
-							backgroundPosition: `${percentX}% 0`
-						}
-					]
-					image.animate(panImageAnimation, {duration: 1500, fill: 'forwards', easing: 'cubic-bezier(.6,-0.02,.49,1.26)'})
-				})
-			}
-		</script>
 	</body>
 	</html>
