@@ -25,7 +25,7 @@
 </head>
 <body>
 
-	<div id="colorlib-page" onmousemove="panImages();">
+	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
@@ -57,7 +57,7 @@
 				<section class="ftco-section ftco-no-pt ftco-no-pb">
 					<div class="container px-md-0">
 						<div class="row d-flex no-gutters">
-							<div class="col-md-3 pricing services" data-index="1" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="1" onmouseenter="focusImage(this); panImages(1);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/nails-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -170,14 +170,13 @@
 		<script language="javascript">
 			const images = document.querySelectorAll(".pricing .img");
 
-			function panImages() {
+			function panImages(index) {
 				if (hasTouchSupport()) return;
 				let mainBox = document.documentElement.getBoundingClientRect(),
 				  	boxWidth = mainBox.width;
 
-				let {clientX: x, clientY: y} = event;
 				images.forEach(function(image) {
-					let percentX = (x / 2 / boxWidth * 100) + 25;
+					let percentX = index * 25;
 
 					let panImageAnimation = [
 						{
@@ -195,8 +194,7 @@
 
 			function focusImage(image) {
 					if (hasTouchSupport()) return; 
-					const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
-						button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
+					const button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
 
 					button.style.color = 'var(--color3)';
 					button.style.borderColor = 'var(--color3)';
@@ -205,8 +203,7 @@
 
 			function unFocusImage(image) {
 				if (hasTouchSupport()) return; 
-				const description = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) ul li`),
-					button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
+				const button = document.querySelector(`.container > div > :nth-child(${image.getAttribute("data-index")}) .btn-custom`);
 
 				button.style.color = 'gold';
 				button.style.borderColor = 'gold';
