@@ -8435,8 +8435,13 @@ h1, h2, h3, h4, h5,
     width: 100%;
     font-weight: normal;
     font-size: 60px;
-    line-height: .8;
-    font-family: "Abril Fatface", cursive; }
+    line-height: .8;}
+  
+    #colorlib-aside #colorlib-logo a {   
+      background-image: linear-gradient(to bottom right, var(--color2), var(--color1), var(--color2)); 
+      font-family: 'pt serif'; 
+      user-select: none;
+    }
     @media (max-width: 1199.98px) {
       #colorlib-aside #colorlib-logo {
         font-size: 40px; } }
@@ -8889,6 +8894,11 @@ h1, h2, h3, h4, h5,
         font-weight: 700;
         border: 1px solid #f3c623;
         padding: 2px 5px; }
+        .text .desc .custom-btn:hover, .pricing .text .btn-custom:hover {
+          color: black;
+          font-size: 14px;
+          background-color: gold;
+          border: 1px solid transparent;}
       .portfolio-wrap-2 .text .desc p {
         margin-bottom: 30px; }
       .portfolio-wrap-2 .text .desc .top {
@@ -8940,7 +8950,7 @@ h1, h2, h3, h4, h5,
   .pricing .img {
     position: relative;
     z-index: 0; 
-    background-position: 100% 100%;}
+    background-position: 0 0;}
     .pricing .img:after {
       position: absolute;
       top: 0;
@@ -8948,8 +8958,8 @@ h1, h2, h3, h4, h5,
       right: 0;
       bottom: 0;
       content: '';
-      background: #000000;
-      opacity: .3;
+      background-color: var(--color4);
+      opacity: .66;
       z-index: -1; }
   .pricing .text {
     position: relative; 
@@ -8983,7 +8993,6 @@ h1, h2, h3, h4, h5,
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 3px;
-      color: #f3c623;
       font-weight: 700;
       border: 1px solid #f3c623;
       padding: 2px 5px; }

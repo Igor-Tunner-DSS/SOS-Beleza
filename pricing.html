@@ -77,7 +77,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing services" data-index="2" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="2" onmouseenter="focusImage(this); panImages(2);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/foot-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -99,7 +99,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing services" data-index="3" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="3" onmouseenter="focusImage(this); panImages(3);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/face-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -120,7 +120,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 pricing services" data-index="4" onmouseenter="focusImage(this);" onmouseleave="unFocusImage(this);">
+							<div class="col-md-3 pricing services" data-index="4" onmouseenter="focusImage(this); panImages(4);" onmouseleave="unFocusImage(this);">
 								<div class="row no-gutters align-items-center">
 									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(images/hair-example.jpg);">
 										<div class="text p-4 ftco-animate">
@@ -183,7 +183,7 @@
 							backgroundPosition: `${percentX}% 0`
 						}
 					]
-					image.animate(panImageAnimation, {duration: 1500, fill: 'forwards', easing: 'cubic-bezier(.6,-0.02,.49,1.26)'})
+					image.animate(panImageAnimation, {duration: 2000, fill: 'forwards', easing: 'ease'})
 				})
 			}
 
